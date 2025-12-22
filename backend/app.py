@@ -41,8 +41,14 @@ def create_app():
         @app.route('/', defaults={'path': ''})
         @app.route('/<path:path>')
         def serve_frontend(path):
+            # Check if the file exists in the 'client' folder (e.g. logo.png, favicon.ico)
+            client_path = os.path.join(app.template_folder, path)
+            if path != "" and os.path.exists(client_path):
+                return send_from_directory(app.template_folder, path)
+                
+            # Check if it exists in 'client/assets' (Flask static folder usually handles this, 
+            # but we can be explicit if needed, or rely on /assets prefix in URL)
             if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
-                 # This handles assets directly if they are in the static folder
                  return send_from_directory(app.static_folder, path)
             
             # For everything else, serve index.html (SPA)
