@@ -6,7 +6,7 @@ A production-ready anonymous feedback application built with Flask, MongoDB, Vue
 
 - Python 3.8+
 - Node.js 16+
-- MongoDB (running on `mongodb://localhost:27017` by default)
+- MongoDB
 
 ## Setup
 
@@ -58,6 +58,4 @@ A production-ready anonymous feedback application built with Flask, MongoDB, Vue
 
 ## Usage
 
-1.  **Public User**: Go to the homepage (e.g., `http://localhost:5173`) to submit feedback anonymously.
-2.  **Admin**: Go to `/admin/login` (e.g., `http://localhost:5173/admin/login`) to log in and view/moderate feedbacks.
-
+  **Public User**: Go to the homepage (e.g., `https://wayanadiitm-unfiltered.onrender.com`) to submit feedback anonymously.
